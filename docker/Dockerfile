@@ -23,7 +23,7 @@ RUN wget --max-redirect=1 -O /opt/mockserver/mockserver-netty-jar-with-dependenc
 WORKDIR /opt/mockserver
 
 # expose ports.
-EXPOSE 1080 1090
+EXPOSE 80
 
 # don't run MockServer as root
 RUN addgroup -g 1000 mockserver && \
@@ -32,4 +32,4 @@ RUN chown -R mockserver:mockserver /opt/mockserver
 USER mockserver
 
 # define default command.
-CMD ["/opt/mockserver/run_mockserver.sh", "-logLevel", "INFO", "-serverPort", "1080"]
+CMD ["/opt/mockserver/run_mockserver.sh", "-logLevel", "INFO", "-serverPort", "80"]
