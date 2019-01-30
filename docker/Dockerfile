@@ -32,4 +32,4 @@ RUN chown -R mockserver:mockserver /opt/mockserver
 USER mockserver
 
 # define default command.
-CMD ["/opt/mockserver/run_mockserver.sh", "-logLevel", "INFO", "-serverPort", "1080"]
+CMD ["/opt/mockserver/run_mockserver.sh", "-logLevel", "INFO", "-serverPort", "1080", "-Dmockserver.initializationJsonPath=" ,""]
